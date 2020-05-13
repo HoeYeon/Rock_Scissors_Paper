@@ -1,0 +1,57 @@
+img {
+  width: 200px;
+  height: 200px;
+  margin: 50px 80px;
+}
+button {
+  padding: 15px 35px;
+  border-radius: 5px;
+  outline: none;
+  transition-duration: 0.4s;
+  box-shadow: 0 2px #999;
+}
+button:hover {
+  cursor: pointer;
+  border: 2px rgba(44, 58, 71, 0.5) solid;
+}
+button:active {
+  background-color: rgba(223, 228, 234, 0.5);
+  box-shadow: 0 4px #666;
+  transform: translateY(3px);
+}
+
+.score_wrapper {
+  font-size: 30px;
+  display: flex;
+  justify-content: space-around;
+  margin: 0.8em auto;
+}
+.game {
+  text-align: center;
+  margin-top: 45px;
+}
+.who_win {
+  font-size: 50px;
+  margin: 20px;
+}
+
+.computer_hand {
+  transform: scaleX(-1);
+}
+.scissors {
+  background-color: #ffeaa7;
+}
+.rock {
+  background-color: #fab1a0;
+}
+.paper {
+  background-color: #74b9ff;
+}
+
+.choice {
+  width: 600px;
+  text-align: center;
+  margin: 20px 300px;
+  display: flex;
+  justify-content: space-around;
+}
