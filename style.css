@@ -26,6 +26,7 @@ button:active {
   display: flex;
   justify-content: space-around;
   margin: 0.8em auto;
+  text-align: center;
 }
 .game {
   text-align: center;
@@ -54,6 +55,39 @@ button:active {
   text-align: center;
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 600px) {
+  img {
+    width: 50px;
+    height: 50px;
+    margin: 25px 40px 50px;
+  }
+  .who_win {
+    font-size: 20px;
+    margin: 20px;
+  }
+  .choice {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+  }
+  button {
+    padding: 7px 10px;
+    border-radius: 5px;
+    outline: none;
+    transition-duration: 0.4s;
+    box-shadow: 0 2px #999;
+    margin: 0px;
+  }
+  .score_wrapper {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0.8em auto;
+    text-align: center;
+  }
 }
 
 @keyframes shakeUser {
