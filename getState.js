@@ -2,19 +2,35 @@ let userHand = "";
 let computerHand = "";
 const hands = ["ROCK", "SCISSORS", "PAPER"];
 
-const setUserHand = () => {
+const setHands = () => {
   const buttons = document.querySelectorAll("button");
   const userImg = document.querySelector(".user_hand");
+  const computerImg = document.querySelector(".computer_hand");
+
+  // 애니메이션 초기화 시켜주면서 계속 애니메이션 실행가능
+  computerImg.addEventListener("animationend", () => {
+    computerImg.style.animation = "";
+  });
+  userImg.addEventListener("animationend", () => {
+    userImg.style.animation = "";
+  });
+
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", (event) => {
       userHand = buttons[i].innerText;
-      userImg.src = `assets/${userHand}.png`;
       computerHand = setcomputerHand();
-      const result = compare(userHand, computerHand);
-      setScore(result);
+      setTimeout(() => {
+        userImg.src = `assets/${userHand}.png`;
+        computerImg.src = `assets/${computerHand}.png`;
+        const result = compare(userHand, computerHand);
+        setScore(result);
+      }, 2000);
+      computerImg.style.animation = "shakeComputer 2s ease";
+      userImg.style.animation = "shakeUser 2s ease";
     });
   }
 };
+
 const setScore = (result) => {
   const who = document.querySelector(".who_win");
   const userScore = document.querySelector(".user_score");
@@ -40,17 +56,10 @@ const compare = (userHand, computerHand) => {
   }
 };
 
-const setcomputerHand = () => {
-  const img = document.querySelector(".computer_hand");
-  const computerHand = randomChoice();
-  img.src = `assets/${computerHand}.png`;
-  return computerHand;
-};
-
-const randomChoice = () => hands[Math.floor(Math.random() * hands.length)];
+const setcomputerHand = () => hands[Math.floor(Math.random() * hands.length)];
 
 const init = () => {
-  setUserHand();
+  setHands();
 };
 
 init();

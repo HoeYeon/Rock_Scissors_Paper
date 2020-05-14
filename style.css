@@ -55,3 +55,44 @@ button:active {
   display: flex;
   justify-content: center;
 }
+
+@keyframes shakeUser {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(-50px);
+  }
+  40% {
+    transform: translateY(0px);
+  }
+  60% {
+    transform: translateY(-50px);
+  }
+  80% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-50px);
+  }
+}
+@keyframes shakeComputer {
+  0% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  20% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+  40% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  60% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+  80% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  100% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+}
