@@ -9,6 +9,7 @@ button {
   outline: none;
   transition-duration: 0.4s;
   box-shadow: 0 2px #999;
+  margin: 10px 30px;
 }
 button:hover {
   cursor: pointer;
@@ -49,9 +50,8 @@ button:active {
 }
 
 .choice {
-  width: 600px;
+  width: 100%;
   text-align: center;
-  margin: 20px 300px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
