@@ -20,9 +20,9 @@ const setHands = () => {
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", (event) => {
       userHand = buttons[i].innerText;
+      computerHand = setcomputerHand();
       computerImg.style.animation = "shakeComputer 2s ease";
       userImg.style.animation = "shakeUser 2s ease";
-      computerHand = setcomputerHand();
     });
   }
 };
@@ -35,17 +35,14 @@ const setScore = (result) => {
   else if (result === 1) {
     who.innerText = "Player Win!";
     userScore.innerText++;
-    console.log(userScore.innerText);
   } else {
     who.innerText = "Computer Win!";
     computerScore.innerText++;
   }
 };
 const compare = (userHand, computerHand) => {
-  if (userHand === computerHand) {
-    console.log("DRAW!");
-    return 0;
-  } else {
+  if (userHand === computerHand) return 0;
+  else {
     if (userHand === "ROCK" && computerHand === "SCISSORS") return 1;
     else if (userHand === "SCISSORS" && computerHand === "PAPER") return 1;
     else if (userHand === "PAPER" && computerHand === "ROCK") return 1;
@@ -55,7 +52,16 @@ const compare = (userHand, computerHand) => {
 
 const setcomputerHand = () => hands[Math.floor(Math.random() * hands.length)];
 
+function preloading(imageArray) {
+  let n = imageArray.length;
+  for (let i = 0; i < n; i++) {
+    let img = new Image();
+    img.src = imageArray[i];
+  }
+}
+
 const init = () => {
+  preloading(["assets/PAPER.png", "assets/ROCK.png", "assets/SCISSORS.png"]);
   setHands();
 };
 
