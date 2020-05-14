@@ -7,26 +7,23 @@ const setHands = () => {
   const userImg = document.querySelector(".user_hand");
   const computerImg = document.querySelector(".computer_hand");
 
-  // 애니메이션 초기화 시켜주면서 계속 애니메이션 실행가능
-  computerImg.addEventListener("animationend", () => {
-    computerImg.style.animation = "";
-  });
-  userImg.addEventListener("animationend", () => {
-    userImg.style.animation = "";
-  });
-
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", (event) => {
       userHand = buttons[i].innerText;
-      computerHand = setcomputerHand();
-      setTimeout(() => {
-        userImg.src = `assets/${userHand}.png`;
-        computerImg.src = `assets/${computerHand}.png`;
-        const result = compare(userHand, computerHand);
-        setScore(result);
-      }, 2000);
       computerImg.style.animation = "shakeComputer 2s ease";
       userImg.style.animation = "shakeUser 2s ease";
+      computerHand = setcomputerHand();
+
+      // 애니메이션 초기화 시켜주면서 계속 애니메이션 실행가능
+      computerImg.addEventListener("animationend", () => {
+        computerImg.style.animation = "";
+        computerImg.src = `assets/${computerHand}.png`;
+      });
+      userImg.addEventListener("animationend", () => {
+        userImg.style.animation = "";
+        userImg.src = `assets/${userHand}.png`;
+        setScore(compare(userHand, computerHand));
+      });
     });
   }
 };
