@@ -1,0 +1,28 @@
+a {
+  text-decoration: none;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  margin: 1em 0;
+  font-size: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px gray solid;
+}
+.games {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.gameWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.gameWrapper > img {
+  width: 100px;
+  min-height: 100px;
+  align-self: center;
+  margin-bottom: 10px;
+}

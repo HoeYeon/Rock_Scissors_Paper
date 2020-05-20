@@ -54,9 +54,11 @@ const setcomputerHand = () => hands[Math.floor(Math.random() * hands.length)];
 
 function preloading(imageArray) {
   let n = imageArray.length;
+  const userImg = document.querySelector(".user_hand");
+  const computerImg = document.querySelector(".computer_hand");
   for (let i = 0; i < n; i++) {
-    let img = new Image();
-    img.src = imageArray[i];
+    userImg.src = imageArray[i];
+    computerImg.src = imageArray[i];
   }
 }
 
