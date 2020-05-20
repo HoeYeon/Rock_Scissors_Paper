@@ -54,17 +54,16 @@ const setcomputerHand = () => hands[Math.floor(Math.random() * hands.length)];
 
 function preloading(imageArray) {
   let n = imageArray.length;
-  const userImg = document.querySelector(".user_hand");
-  const computerImg = document.querySelector(".computer_hand");
   for (let i = 0; i < n; i++) {
+    const userImg = new Image();
+    const computerImg = new Image();
     userImg.src = imageArray[i];
     computerImg.src = imageArray[i];
   }
 }
 
 const init = () => {
-  preloading(["assets/PAPER.png", "assets/ROCK.png", "assets/SCISSORS.png"]);
   setHands();
+  preloading(["assets/PAPER.png", "assets/ROCK.png", "assets/SCISSORS.png"]);
 };
-
 init();
