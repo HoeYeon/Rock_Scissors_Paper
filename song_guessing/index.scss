@@ -1,0 +1,47 @@
+html {
+  background: linear-gradient(45deg, #fd79a8, #c7efff);
+  height: 100%;
+  width: 100%;
+}
+body {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  margin: 0px;
+}
+
+.wrapper {
+  margin: 5em auto 10%;
+  width: fit-content;
+}
+.image {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: 0 auto;
+}
+.song-info {
+  color: white;
+  font-family: "Gill Sans MT";
+  text-align: center;
+}
+.title {
+  font-weight: bold;
+  font-size: 35px;
+}
+.singer {
+  font-size: 20px;
+}
+.controller {
+  display: flex;
+  justify-content: center;
+  * {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.next {
+  transform: scaleX(-1);
+}
